@@ -1,5 +1,5 @@
-db.Enderecos.find(
+db.Produtos.find(
     {
-        codigo_postal:{$regex:"^16"
-            
+        categoria:{$regex:"^Eletrônicos"
+
         }})

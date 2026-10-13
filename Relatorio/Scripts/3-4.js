@@ -1,4 +1,4 @@
 db.Clientes.find(
-    {status_civil:{$in:["Viúvo(a)","Casado(a)"]
-        
+    {tipo_cliente:{$in:["B2B","B2C"]
+
     }})

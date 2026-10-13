@@ -1,1 +1,1 @@
-db.Clientes.find({dependentes:{$exists:true}})
+db.Clientes.find({empresa:{$exists:true}})

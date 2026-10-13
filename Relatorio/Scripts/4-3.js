@@ -1,8 +1,8 @@
-db.Contas.aggregate([
+db.Pedidos.aggregate([
   {
     $match: {
-      tipo: "Conta salário",
-      valor: { $gt: 3500 }
+      status: "Entregue",
+      valor_total: { $gt: 3500 }
     }},{
     $group: {
       _id: null,

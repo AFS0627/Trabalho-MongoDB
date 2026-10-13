@@ -1,10 +1,10 @@
 db.Clientes.aggregate([
   {
     $lookup:{
-      from: "Contas",
+      from: "Pedidos",
       localField: "cpf",
-      foreignField: "cpf",
-      as: "clientes_contas"
+      foreignField: "cpf_cliente",
+      as: "clientes_pedidos"
     }},{
     $project:{
       _id: 0,

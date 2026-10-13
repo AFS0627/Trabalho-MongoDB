@@ -1,4 +1,4 @@
-db.Clientes.aggregate([
-  {$unwind: "$seguros"},
-  {$sortByCount: "$genero"}
+db.Pedidos.aggregate([
+  {$unwind: "$itens"},
+  {$sortByCount: "$itens.categoria"}
 ])

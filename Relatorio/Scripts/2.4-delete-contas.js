@@ -1,2 +1,2 @@
-db.Contas.deleteMany({
-    valor: {$lte: 0}})
+db.Pedidos.deleteMany({
+    valor_total: {$lte: 0}})

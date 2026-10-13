@@ -1,1 +1,1 @@
-db.Contas.find().skip(20).limit(5)
+db.Pedidos.find().skip(20).limit(5)

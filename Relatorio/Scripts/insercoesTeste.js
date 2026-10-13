@@ -1,122 +1,108 @@
 db.Clientes.insertMany([
   {
-    nome: "Ana Silva",
-    cpf: "11111111111",
-    genero: "Feminino",
-    profissao: "Professora",
-    data_nascimento: ISODate("1995-05-10"),
-    status_civil: "Casado(a)",
-    dependentes: ["Pedro"],
-    seguros: ["Vida", "Carro"]
+    nome: "Carlos Silva",
+    cpf: "888.568.498-01",
+    email: "carlos@email.com",
+    tipo_cliente: "B2B",
+    empresa: "Silva Tecnologia",
+    data_nascimento: ISODate("1990-05-20T00:00:00Z")
   },
   {
-    nome: "João Santos",
-    cpf: "22222222222",
-    genero: "Masculino",
-    profissao: "Analista",
-    data_nascimento: ISODate("1990-03-15"),
-    status_civil: "Viúvo(a)",
-    seguros: ["Vida"]
+    nome: "Ana Souza",
+    cpf: "111.222.333-44",
+    email: "ana@email.com",
+    tipo_cliente: "B2C",
+    data_nascimento: ISODate("1998-03-15T00:00:00Z")
   },
   {
-    nome: "Maria Souza",
-    cpf: "33333333333",
-    genero: "Feminino",
-    profissao: "Enfermeira",
-    data_nascimento: ISODate("2000-08-20"),
-    status_civil: "Solteiro(a)",
-    dependentes: [],
-    seguros: ["Carro", "Casa"]
-  },
-  {
-    nome: "Pedro Lima",
-    cpf: "44444444444",
-    genero: "Masculino",
-    profissao: "Técnico",
-    data_nascimento: ISODate("1998-11-02"),
-    status_civil: "Casado(a)",
-    seguros: ["Vida"]
-  },
-  {
-    nome: "Carla Alves",
-    cpf: "55555555555",
-    genero: "Feminino",
-    profissao: "Advogada",
-    data_nascimento: ISODate("1988-01-12"),
-    status_civil: "Viúvo(a)",
-    dependentes: ["Lucas"],
-    seguros: ["Casa"]
+    nome: "Pedro Santos",
+    cpf: "222.333.444-55",
+    email: "pedro@email.com",
+    tipo_cliente: "B2B",
+    empresa: "Santos Comércio",
+    data_nascimento: ISODate("1985-07-10T00:00:00Z")
   }
 ])
 
-
-db.Contas.insertMany([
+db.Produtos.insertMany([
   {
-    numero_conta: "1001",
-    agencia: "0001",
-    tipo: "Conta salário",
-    cpf: "11111111111",
-    valor: 5000
+    nome: "Notebook",
+    categoria: "Eletrônicos",
+    preco: 3500,
+    especificacoes: { memoria: "16GB", armazenamento: "512GB SSD" }
   },
   {
-    numero_conta: "1002",
-    agencia: "0001",
-    tipo: "Conta corrente",
-    cpf: "22222222222",
-    valor: 2500
+    nome: "Camiseta",
+    categoria: "Vestuário",
+    preco: 50,
+    especificacoes: { tamanho: "M", cor: "Preta" }
   },
   {
-    numero_conta: "1003",
-    agencia: "0002",
-    tipo: "Conta salário",
-    cpf: "33333333333",
-    valor: 4000
-  },
-  {
-    numero_conta: "1004",
-    agencia: "0002",
-    tipo: "Conta poupança",
-    cpf: "44444444444",
-    valor: 1500
-  },
-  {
-    numero_conta: "1005",
-    agencia: "0001",
-    tipo: "Conta salário",
-    cpf: "55555555555",
-    valor: 3500
+    nome: "Celular",
+    categoria: "Eletrônicos",
+    preco: 2000,
+    especificacoes: { memoria: "8GB", armazenamento: "256GB" }
   }
 ])
 
-db.Enderecos.insertMany([
+db.Pedidos.insertMany([
   {
-    cpf: "11111111111",
-    cidade: "Blumenau",
-    estado: "SC",
-    codigo_postal: "89010-100"
+    numero: 1001,
+    cpf_cliente: "888.568.498-01",
+    tipo_pedido: "B2B",
+    status: "Entregue",
+    valor_total: 5000,
+    itens: [
+      { produto: "Notebook", categoria: "Eletrônicos", quantidade: 1, preco: 3500 },
+      { produto: "Celular", categoria: "Eletrônicos", quantidade: 1, preco: 1500 }
+    ]
   },
   {
-    cpf: "22222222222",
-    cidade: "Gaspar",
-    estado: "SC",
-    codigo_postal: "89110-200"
+    numero: 1002,
+    cpf_cliente: "111.222.333-44",
+    tipo_pedido: "B2C",
+    status: "Pendente",
+    valor_total: 100,
+    itens: [
+      { produto: "Camiseta", categoria: "Vestuário", quantidade: 2, preco: 50 }
+    ]
   },
   {
-    cpf: "33333333333",
-    cidade: "São Paulo",
-    estado: "SP",
-    codigo_postal: "16010-300"
+    numero: 1003,
+    cpf_cliente: "222.333.444-55",
+    tipo_pedido: "B2B",
+    status: "Entregue",
+    valor_total: 4000,
+    itens: [
+      { produto: "Notebook", categoria: "Eletrônicos", quantidade: 1, preco: 3500 },
+      { produto: "Camiseta", categoria: "Vestuário", quantidade: 10, preco: 50 }
+    ]
+  }
+])
+
+db.Carrinhos_Sessao.insertMany([
+  {
+    cpf_cliente: "888.568.498-01",
+    status: "Ativo",
+    itens: [
+      { produto: "Notebook", quantidade: 1, preco: 3500 }
+    ],
+    valor_total: 3500
   },
   {
-    cpf: "44444444444",
-    cidade: "Bauru",
-    estado: "SP",
-    codigo_postal: "17010-400"
+    cpf_cliente: "111.222.333-44",
+    status: "Ativo",
+    itens: [
+      { produto: "Camiseta", quantidade: 2, preco: 50 }
+    ],
+    valor_total: 100
   },
   {
-    cpf: "55555555555",
-    cidade: "Itajaí",
-    estado: "SC",
-    codigo_postal: "88300-500"
+    cpf_cliente: "222.333.444-55",
+    status: "Abandonado",
+    itens: [
+      { produto: "Celular", quantidade: 1, preco: 2000 }
+    ],
+    valor_total: 2000
   }
 ])

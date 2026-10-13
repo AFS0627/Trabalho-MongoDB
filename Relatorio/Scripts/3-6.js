@@ -1,1 +1,5 @@
-db.Enderecos.find({codigo_postal:{$regex:"^16"}})
+db.Enderecos.find(
+    {
+        codigo_postal:{$regex:"^16"
+            
+        }})

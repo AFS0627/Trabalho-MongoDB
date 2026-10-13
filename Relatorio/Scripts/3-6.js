@@ -1,0 +1,1 @@
+db.Enderecos.find({codigo_postal:{$regex:"^16"}})

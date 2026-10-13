@@ -1,0 +1,1 @@
+db.Clientes.find({dependentes:{$exists:true}})
